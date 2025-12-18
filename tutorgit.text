@@ -1,0 +1,32 @@
+Cara menggunakan git
+
+Terdapat 3 area dalam penggunaan git bash:
+Working tree(Folder dan isinya) ->"$ git add"-> Stagging Area ->"$ git commit"-> History
+
+Langkah awal test:
+- Buat folder untuk dijadikan repository (manual dari win explorer)
+- Pada git bash cd ke lokasi folder tersebut
+- Lakukan command "$ git init" untuk membuat folder tersebut menjadi repository Branch Master
+
+Test commit melalui git bash
+- Buka Code Editor pada folder tersebut dan buatlah 1 file apapun sebagai contoh (txt, python, javascript, html dsb)
+- Ketika di save, file hanya akan tersimpan secara local di PC
+- Step untuk melakukan commit dari git bash adalah :
+  - gunakan command "$ git status" -> untuk mentracking apa saja perubahan yang ada pada folder repository (Master) tersebut terlebih dahulu
+    (Perubahan bisa berbentuk penambahan file baru, penghapusan file dan lain sebagainya)
+  - contoh, terdapat 1 buah file python yang sudah dibuat dan terdeteksi sebagai "Untracked Files" oleh git status.
+  - maka gunakan command "$ git add <nama file.py>" untuk memasukkan file tersebut kedalam Stagging Area
+  - cek kembali menggunakan "$ git status" untuk melihat perubahan pada folder repository
+  - apabila file sudah berhasil masuk kedalam stagging area, untuk melakukan unstage gunakan command "$ git rm --cached <nama file>"
+
+  Untuk melakukan commit terdapat 2 cara:
+  - apabila commitnya panjang biasanya commit dilakukan dari code editor (cth. VSCode)
+  - dan apabila hanya sedikit bisa langsung menggunakan command "$ git commit -m "komentar commit""
+
+  *Notes:
+  Untuk penggunaan pertama kali, git bash perlu di konfigurasi untuk melakukan commit yaitu:
+  - set username menggunakan command "$ git config --global user.name "username yang digunakan""
+  - set email menggunakan command "$ git config --global user.email "email yang digunakan""
+  Direkomendasikan menggunakan username dan email yang sesuai dengan akun GitHub yang digunakan untuk memudahkan connection antara git dan github nantinya.
+
+- Lakukan git status setelah melakukan commit untuk melakukan pengecekan apakah file sudah benar benar ter-commit dan tersimpan di History area.
