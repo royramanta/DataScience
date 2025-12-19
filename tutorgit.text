@@ -15,7 +15,7 @@ Test commit melalui git bash
   - gunakan command "$ git status" -> untuk mentracking apa saja perubahan yang ada pada folder repository (Master) tersebut terlebih dahulu
     (Perubahan bisa berbentuk penambahan file baru, penghapusan file dan lain sebagainya)
   - contoh, terdapat 1 buah file python yang sudah dibuat dan terdeteksi sebagai "Untracked Files" oleh git status.
-  - maka gunakan command "$ git add <nama file.py>" untuk memasukkan file tersebut kedalam Stagging Area
+  - maka gunakan command "$ git add <nama file>" untuk memasukkan file tersebut kedalam Stagging Area
   - cek kembali menggunakan "$ git status" untuk melihat perubahan pada folder repository
   - apabila file sudah berhasil masuk kedalam stagging area, untuk melakukan unstage gunakan command "$ git rm --cached <nama file>"
 
@@ -30,3 +30,55 @@ Test commit melalui git bash
   Direkomendasikan menggunakan username dan email yang sesuai dengan akun GitHub yang digunakan untuk memudahkan connection antara git dan github nantinya.
 
 - Lakukan git status setelah melakukan commit untuk melakukan pengecekan apakah file sudah benar benar ter-commit dan tersimpan di History area.
+
+
+*Tambahan*
+
+Case 1: 
+Terdapat tambahan file baru (cth. test2.py) dan modifikasi pada file pertama (test.py),
+maka pada saat melakukan git status akan terdapat 2 detail yang muncul terhadap masing masing file yaitu:
+- 1 file akan terbaca sebagai 'changes not staged for commit' dan 1 file akan terbaca sebagai 'untracked files'.
+
+pada case ini, solusinya bisa dengan melakukan git add satu persatu terhadap file dengan cara git add <namafile>
+atau bisa juga dengan menggunakan command "$ git add ." agar file bisa sekaligus ter add ke stagging area.
+lalu terakhir lakukan git commit -m "komentar" seperti biasanya untuk commit ke history area.
+
+Case 2:
+Pada case 1 file test2.py ternyata tidak digunakan lagi karena codenya akan langsung disimpan di file pertama (test.py) dan akan dihapus dari folder/editor.
+Lalu terdapat file baru tambahan yang dibuat yaitu file test3.py, maka pada saat melakukan git status akan terdapat 3 detail yang muncul yaitu:
+- 2 file akan terbaca sebagai 'untracked files' (1 file modified dan 1 file deleted) dan 1 file terbaca sebagai 'untracked files'.
+
+Pada case ini, solusinya tetap sama dengan case 1 yaitu lakukan git add agar file masuk ke stagging area, lalu terakhir lakukan git commit untuk commit ke history area.
+
+
+Untuk melakukan pengecekan terhadap apa saja yang sudah pernah dilakukan di dalam folder repository terdapat beberapa command yaitu:
+- "$ git log" -> untuk melihat log keseluruhan
+- "$ git log -3" -> untuk melihat 3 log terakhir
+- "$ git log -- <namafile> -> untuk melihat log terhadap file spesifik
+
+case 3:
+Pada case 2 terdapat file yang dihapus yaitu file test2.py, untuk mengembalikan dan menggunakan kembali file tersebut bisa menggunakan beberapa command yaitu:
+- "$ git checkout <5digit pertama commit hash code>" -> untuk mengembalikan kondisi ke kondisi sepenuhnya seperti pada commit target
+- atau "$ git checkout <5digit pertama commit hash code> -- <namafile>" -> untuk mengembalikan kondisi spesifik terhadap suatu file saja.
+Setelah file berhasil diambil kembali (recovery), file nantinya akan terbaca sebagai file 'changes to be commited' di dalam stagging area yang siap untuk di commit.
+Apabila tidak ada perubahan lagi pada file tersebut, langkah terakhir gunakan command git commit untuk meng commit perubahan.
+
+
+// Seluruh perubahan apapun yang terjadi dalam folder repository, akan tersimpan secara otomatis di dalam folder .git yang sudah dibuat saat melakukan git init //
+
+
+
+## Commands recap:
+- git init                                                 -> Membuat folder biasa menjadi folder repository (Master Branch)
+- git status                                               -> Melakukan pengecekan status perubahan pada git
+- git add <namafile>                                       -> Memasukkan file kedalam stagging area sebelum commit
+- git rm --cached <namafile>                               -> Menghapus file dari stagging area
+- git commit -m "komentar"                                 -> Melakukan commit dengan komentar
+- git config --global user.name "username"                 -> Konfigurasi awal saat menggunakan git untuk set username git
+- git config --global user.email "email"                   -> Konfigurasi awal saat menggunakan git untuk set email git
+- git add .                                                -> Melakukan git add terhadap seluruh file sekaligus
+- git log                                                  -> Melihat log perubahan keseluruhan
+- git log -<value>                                         -> Melihat log dalam <spesifik value> terakhir (cth. value=3, 3 log terakhir)
+- git log -- <namafile>                                    -> Melihat log terhadap suatu file spesifik
+- git checkout <5DigitHashCommitCode>                      -> Melakukan recovery sepenuhnya ke kondisi commit yang ditentukan
+- git checkout <5DigitHashCommitCode> -- <namafile>        -> Melakukan recovery terhadap suatu file spesifik 
