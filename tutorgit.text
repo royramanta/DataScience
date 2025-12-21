@@ -74,6 +74,7 @@ Apabila tidak ada perubahan lagi pada file tersebut, langkah terakhir gunakan co
 - git add <namafile>                                       -> Memasukkan file kedalam stagging area sebelum commit
 - git rm --cached <namafile>                               -> Menghapus file dari stagging area
 - git commit -m "komentar"                                 -> Melakukan commit dengan komentar
+- git commit -am "komentar"                                -> Melakukan commit langsung tanpa add ke staging area (hanya untuk file berjenis 'modified')
 - git config --global user.name "username"                 -> Konfigurasi awal saat menggunakan git untuk set username git
 - git config --global user.email "email"                   -> Konfigurasi awal saat menggunakan git untuk set email git
 - git add .                                                -> Melakukan git add terhadap seluruh file sekaligus
@@ -82,3 +83,10 @@ Apabila tidak ada perubahan lagi pada file tersebut, langkah terakhir gunakan co
 - git log -- <namafile>                                    -> Melihat log terhadap suatu file spesifik
 - git checkout <5DigitHashCommitCode>                      -> Melakukan recovery sepenuhnya ke kondisi commit yang ditentukan
 - git checkout <5DigitHashCommitCode> -- <namafile>        -> Melakukan recovery terhadap suatu file spesifik 
+
+
+## tambahan command:
+- git branch                                               -> Untuk melihat branch
+- git branch <namabranch>                                  -> Untuk membuat branch baru
+- git branch -d <namabranch>                               -> Untuk menghapus branch
+- git config --list                                        -> Untuk melihat setting/konfigurasi git bash
