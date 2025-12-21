@@ -1,6 +1,7 @@
 clone command : $ git clone <link dari github>, #Metode HTTPS bukan SSH
 lalu $ git remote, untuk meremote github dari pc(local)
 $ git remote -v, untuk melihat lebih detail
+$ git remote add <link repo>, untuk melakukan remote dari local apabila folder/repo berasal dari local dan di github masih kosong
 
 $ git push, digunakan untuk melakukan request push/update dari local ke remote server
 $ git fetch, digunakan utuk mengetahui status terupdate/perbedaan dari/antara repo remote sebelum melakukan pull
